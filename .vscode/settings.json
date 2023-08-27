@@ -1,0 +1,4 @@
+{
+    "dbt.queryLimit": 500,
+    "editor.inlayHints.enabled": "off"
+}

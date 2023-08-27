@@ -1,0 +1,39 @@
+name: 'oms_dbt_proj'
+version: '1.0.0'
+config-version: 2
+
+profile: 'oms_dbt_proj'
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:         # directories to be removed by `dbt clean`
+  - "target"
+  - "dbt_packages"
+
+models:
+  oms_dbt_proj:
+    profit_us:
+      schema: TRAINING
+      materialized: table
+    profit_uk:
+      schema: TRAINING
+      materialized: table
+    profit_india:
+      schema: TRAINING
+      materialized: table
+    customers_stg:
+      schema: L2_PROCESSING
+    orders_stg:
+      schema: L2_PROCESSING
+    orderitems_stg:
+      schema: L2_PROCESSING
+    customerrevenue:
+      materialized: table
+    orders_fact:
+      schema: L2_PROCESSING
+      materialized: table
